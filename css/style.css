@@ -1,0 +1,208 @@
+/* set up flex to center title and category input */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* set up flex with 5 rows  */
+.board {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* set each row as flex with 10 items */
+.row {
+    display: flex;
+    column-gap: 20px;
+    /* row-gap: 20px; */
+}
+
+/* Container that creates 3D space for the flip */
+.card-container {
+    perspective: 1000px;
+    /* How far away the viewer is from the 3D object */
+    width: 120px;
+    height: 150px;
+    cursor: pointer;
+}
+
+/* The actual card that will flip */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* Enable 3D transforms for children */
+    transition: transform 0.6s;
+    /* Smooth flip animation */
+}
+
+/* When flipped class is added, rotate the card */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Shared styles for both card faces */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Hide the back when facing away */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Back face styling - pre-rotated so it shows correctly when flipped */
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* each cell is a card
+.card {
+    /* background: black; */
+/* border-radius: 7px; */
+/* height: 120px;
+    width: 90px;
+    perspective: 1000px; */
+/* How far away the viewer is from the 3D object */
+/* width: 300px;
+    height: 400px;
+    cursor: pointer; */
+/* 
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    ; */
+
+/* } */
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+#inputs {
+    display: flex;
+    gap: 30px;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+}
+
+.modern-select {
+    width: 100%;
+    padding: 16px 40px 16px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: rgba(0, 0, 0, 0.87);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-select:hover {
+    border-color: rgba(0, 0, 0, 0.87);
+}
+
+.modern-select:focus {
+    border-color: #1976d2;
+    border-width: 2px;
+    padding: 15px 39px 15px 15px;
+    box-shadow: 0 0 0 1px #1976d2;
+}
+
+.modern-select:disabled {
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.38);
+    border-color: rgba(0, 0, 0, 0.12);
+    cursor: not-allowed;
+}
+
+/* Custom dropdown arrow */
+.input-container::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(0, 0, 0, 0.54);
+    pointer-events: none;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-container:has(.modern-select:focus)::after {
+    transform: translateY(-50%) rotate(180deg);
+    border-top-color: #1976d2;
+}
+
+/* Label style (optional) */
+.select-label {
+    display: block;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Helper text (optional) */
+.select-helper {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 4px;
+    padding-left: 16px;
+}
+
+/* Filled variant */
+.modern-select.filled {
+    background: rgba(0, 0, 0, 0.06);
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    border-radius: 4px 4px 0 0;
+    padding-bottom: 8px;
+}
+
+.modern-select.filled:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-bottom-color: rgba(0, 0, 0, 0.87);
+}
+
+.modern-select.filled:focus {
+    background: rgba(0, 0, 0, 0.09);
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 7px;
+    box-shadow: none;
+}
