@@ -52,13 +52,6 @@ const handleClicks = async (event) => {
 
         const cardSet = document.querySelectorAll('.current-set');
 
-        //remove after testing is complete
-        let c = 0;
-        cardSet.forEach(card => {
-            console.log(`${c}: ${card.id}`);
-            c++;
-        });
-
         const cardCount = cardSet.length;
 
         if (cardCount === 2) {
