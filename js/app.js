@@ -1,5 +1,6 @@
 import { cardsObj } from './cards.js';
 const imagePath = `./images/home/`;
+
 function handleInputs() {
     const category = document.querySelector('#category').value;
     const size = document.querySelector('#grid-size').value;
