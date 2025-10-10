@@ -386,7 +386,7 @@ function generateHeader() {
     const socialObj = {
         email: [`mailto:esegev1@gmail.com`, `emailLogo.png`],
         gitHub: [`https://github.com/esegev1`, `gitHubLogo.png`],
-        linkedIn: [`https://www.linkedin.com/in/ericsegev/`, `linkedInLogo.webp`],
+        linkedIn: [`https://www.linkedin.com/in/ericsegev/`, `linkedInLogo.png`],
     }
 
     //create proffesional social link container
