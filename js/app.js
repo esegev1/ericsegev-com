@@ -351,6 +351,7 @@ function initializeBoard() {
     //create HTML elements for game
     const body = document.querySelector('body')
     body.replaceChildren();
+    console.log('test');
 
     //
     createHeader();
