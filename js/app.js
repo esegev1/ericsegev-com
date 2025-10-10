@@ -163,7 +163,6 @@ function createCard(category, imageName, imageNum) {
 function setBoard(category, size) {
 
     const board = document.querySelector('.board');
-    // board.addEventListener('click', handleClicks);
 
     //clear out existing board
     board.innerHTML = '';
