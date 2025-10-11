@@ -7,8 +7,11 @@ const imagePath = `./images/home/`;
  *    
  **************************************************************/
 const projectHandler = (event) => {
-    console.log(`currentTarget: ${event.target.id}`);
-    const project = event.target.id;
+    console.log(`currentTarget: ${event.currentTarget}, target.id: ${event.target.id}`);
+
+    const target = event.target.closest('li');
+
+    const project = target.id;
 
     switch (project) {
         case 'memory-game': initializeBoard();
@@ -83,23 +86,23 @@ function generateIntro() {
     const p1 = document.createElement('p');
     p1.id = 'p1';
     p1.innerText = `I’m Eric, I’m a data driven Ops and Product leader with \
-                    deep tech experience.`;
+                    deep tech industry experience.`;
 
     const p2 = document.createElement('p');
     p2.id = 'p2';
-    p2.innerHTML = `Above all else, <span id="builder">I'm a builder</span>, \
+    p2.innerHTML = `But above all else, <span id="builder">I'm a builder</span>, \
                     check out my projects below!`;
 
     //create intro section
     const intro = document.createElement('section');
     intro.classList.toggle('intro');
 
-    const background = generateBackground();
+    // const background = generateBackground();
 
     intro.appendChild(title);
     intro.appendChild(p1);
     intro.appendChild(p2);
-    intro.appendChild(background);
+    // intro.appendChild(background);
 
     return intro;
 
@@ -253,6 +256,13 @@ function generateAboutMe() {
  *    
  **************************************************************/
 function generateProjects() {
+
+    //array with list of projects to display
+    const projectsArr = [
+        { name: 'Memory Game', icon: `${imagePath}memorygame.png` },
+        { name: 'F1 Fantasy', icon: `${imagePath}f1fantasy.png` }
+    ];
+
     //create projects container
     const projectsContainer = document.createElement('section');
     projectsContainer.classList.toggle('projects-container');
@@ -269,21 +279,44 @@ function generateProjects() {
 
     projects.appendChild(projectsTitle);
 
+
     //create list of projects
     const ul = document.createElement('ul');
-
-    const li = document.createElement('li');
-    li.innerText = 'Memory Game';
-    li.id = "memory-game";
-
-    ul.appendChild(li);
 
     projects.appendChild(ul);
 
     //add click listenere to the projects section
     projects.addEventListener('click', projectHandler);
-    
+
     projectsContainer.appendChild(projects);
+
+    //create project tiles by looping through projectsArr
+    for (const project of projectsArr) {
+        console.log(project);
+        //add project icon
+        const projectIcon = document.createElement('img');
+        projectIcon.src = project.icon
+
+        //create tile for the project
+        const tile = document.createElement('div');
+        tile.classList.toggle('project-tile');
+
+        tile.appendChild(projectIcon);
+
+        //create project title
+        const projectTitle = document.createElement('h3');
+        projectTitle.innerText = project.name;
+
+        //create list item element
+        const li = document.createElement('li');
+        li.class = 'project-container';
+
+
+        li.appendChild(tile);
+        li.appendChild(projectTitle);
+
+        ul.appendChild(li);
+    }
 
     return projectsContainer;
 }

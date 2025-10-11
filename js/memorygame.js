@@ -207,7 +207,7 @@ function setBoard(category, size) {
  *    
  **************************************************************/
 function createHeader() {
-    const body = document.querySelector('body');
+    const main = document.querySelector('.main');
     //create  grid size options
     const sizeOption1 = document.createElement('option');
     sizeOption1.value = '4_4';
@@ -326,10 +326,10 @@ function createHeader() {
 
     backButton.addEventListener('click', generateHomePage);
 
-    //add it all to the body
-    body.appendChild(topSection);
-    body.appendChild(gameContainer);
-    body.appendChild(backButton);
+    //add it all to the main
+    main.appendChild(topSection);
+    main.appendChild(gameContainer);
+    main.appendChild(backButton);
 }
 
 
@@ -341,8 +341,8 @@ function createHeader() {
  **************************************************************/
 export function initializeBoard() {
     //create HTML elements for game
-    const body = document.querySelector('body')
-    body.replaceChildren();
+    const main = document.querySelector('.main')
+    main.replaceChildren();
     console.log('test');
 
     //
