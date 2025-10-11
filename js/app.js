@@ -328,6 +328,6 @@ export function generateHomePage() {
 
 }
 
-generateHomePage()
+generateHomePage();
 
 // initializeBoard();
