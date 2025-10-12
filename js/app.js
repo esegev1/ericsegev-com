@@ -17,8 +17,8 @@ const projectHandler = (event) => {
     const project = parentLi.id;
 
     switch (project) {
-        case 'memory-game': initializeBoard();
-        case 'f1-fantasy': initializeFantasy();
+        case 'memory-game': initializeBoard(); break;
+        case 'f1-fantasy': initializeFantasy(); break;
     }
 
 

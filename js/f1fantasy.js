@@ -19,7 +19,7 @@ function loadContent() {
             })
             .then(data => {
                 // Handle the retrieved data
-                console.log(`data: ${data}`);
+                // console.log(`data: ${data}`);
                 resolve(data);
             })
             .catch(error => {
@@ -43,7 +43,7 @@ async function fetchData() {
     //format data into table
     const dataArr = [];
     for (const row of data) {
-        console.log(`row: ${JSON.stringify(row, null, 2)}`);
+        // console.log(`row: ${JSON.stringify(row, null, 2)}`);
         const rowArr = [
             // row.meeting_key,
             // row.circuit_key,
@@ -145,6 +145,5 @@ export function initializeFantasy() {
     // console.log(`artocle ${article}`);
 
     fetchData();
-
 
 }
