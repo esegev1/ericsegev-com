@@ -7,21 +7,29 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playwrite+DE+SAS:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <!-- <script src="./js/app.js"></script> -->
     <script type="module" src="./js/cards.js"></script>
-    <script type="module" src="./js/memorygame.js"></script>
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/memorygame.js"></script>
+
+    <script type="module">
+        import { generateHomePage } from './js/app.js';
+        generateHomePage();
+    </script>
     <title>Eric Segev</title>
+
 </head>
 
 <body>
 </body>
+<script type="module">
+    import { generateHomePage } from './app.js';
+    generateHomePage();
+</script>
 
-</html> 
+</html>
 
 <!-- div.row*5>div.card*5>div#back$.back>img[src='./images/back.png']+div#front$.front>img[src='./images/${category}${randNum}.jpg'] -->

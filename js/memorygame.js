@@ -1,5 +1,5 @@
 import { cardsObj } from './cards.js';
-import { generateHomePage } from './app.js';
+// import { generateHomePage } from './app.js';
 
 
 function handleInputs() {
