@@ -1,5 +1,5 @@
 import { cardsObj } from './cards.js';
-// import { generateHomePage } from './app.js';
+import { generateHomePage } from './app.js';
 
 
 function handleInputs() {
@@ -245,7 +245,7 @@ function createHeader() {
     //create category select label
     const gridSizeLabel = document.createElement('label');
     gridSizeLabel.setAttribute('for', 'grid-size');
-    gridSizeLabel.innerText = 'Choose Category'
+    gridSizeLabel.innerText = 'Choose Grid Size'
 
     //create grid size div
     const gridSizeDiv = document.createElement('div');
@@ -301,6 +301,16 @@ function createHeader() {
     const h1 = document.createElement('h1');
     h1.innerText = 'Memory Game by Category'
 
+    //create back button
+    const backButton = document.createElement('button');
+    backButton.classList.toggle('back-button');
+    backButton.innerText = `Back`;
+
+    //create back button container
+    const backButtonContainer = document.createElement('div');
+    backButtonContainer.classList.toggle('back-button-container');
+
+    backButtonContainer.appendChild(backButton);
 
     //create header element
     const topSection = document.createElement('section');
@@ -320,16 +330,15 @@ function createHeader() {
 
     gameContainer.appendChild(board);
 
-    //create back button
-    const backButton = document.createElement('button');
-    backButton.innerText = `Back`;
+
 
     backButton.addEventListener('click', generateHomePage);
 
     //add it all to the main
+    main.appendChild(backButtonContainer);
     main.appendChild(topSection);
     main.appendChild(gameContainer);
-    main.appendChild(backButton);
+    
 }
 
 

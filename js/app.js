@@ -1,4 +1,6 @@
 import { initializeBoard } from './memorygame.js';
+import { initializeFantasy } from './f1fantasy.js';
+
 const imagePath = `./images/home/`;
 
 /**************************************************************
@@ -9,12 +11,14 @@ const imagePath = `./images/home/`;
 const projectHandler = (event) => {
     console.log(`currentTarget: ${event.currentTarget}, target.id: ${event.target.id}`);
 
-    const target = event.target.closest('li');
+    const parentLi = event.target.closest('li');
 
-    const project = target.id;
+    console.log(`parentLi: ${parentLi.id}`);
+    const project = parentLi.id;
 
     switch (project) {
         case 'memory-game': initializeBoard();
+        case 'f1-fantasy': initializeFantasy();
     }
 
 
@@ -259,8 +263,8 @@ function generateProjects() {
 
     //array with list of projects to display
     const projectsArr = [
-        { name: 'Memory Game', icon: `${imagePath}memorygame.png` },
-        { name: 'F1 Fantasy', icon: `${imagePath}f1fantasy.png` }
+        { name: 'Memory Game', icon: `${imagePath}memorygame.png`, code: 'memory-game' },
+        { name: 'F1 Fantasy', icon: `${imagePath}f1fantasy.png`, code: 'f1-fantasy' }
     ];
 
     //create projects container
@@ -309,7 +313,8 @@ function generateProjects() {
 
         //create list item element
         const li = document.createElement('li');
-        li.class = 'project-container';
+        li.id = project.code;
+        li.classList.toggle('project-container');
 
 
         li.appendChild(tile);
