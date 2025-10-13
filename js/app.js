@@ -309,7 +309,7 @@ function generateProjects() {
 
         //create project title
         const projectTitle = document.createElement('h3');
-        projectTitle.innerText = project.name;
+        // projectTitle.innerText = project.name;
 
         //create list item element
         const li = document.createElement('li');

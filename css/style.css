@@ -452,25 +452,38 @@ nav {
     list-style-type: none;
 }
 
+.projects li {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    /* gap: 40px; */
+    list-style-type: none;
+}
+
 .projects h3 {
     font-size: 16px;
     margin: 0;
     color: var(--text-color);
+    text-align: center;
 }
 
 .project-tile {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--text-color);
+    /* border: 2px solid var(--text-color); */
     border-radius: var(--border-radius);
-    padding: 10px 0;
+    /* width: 100px;
+    height: 80px; */
+    /* padding: 10px 10px; */
+    box-shadow: 5px 5px 10px #8a9fbe;
     ;
 }
 
 .project-tile img {
-    width: 80px;
-    height: auto;
+    width: 120px;
+    height: 120px;
     /* border: 1px solid var(--text-color); */
 }
 
