@@ -1,4 +1,4 @@
-import { cardsObj } from './cards.js';
+import { cardsObj } from './objects.js';
 import { generateHomePage } from './app.js';
 
 

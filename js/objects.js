@@ -1,3 +1,27 @@
+export const openF1Queries = [
+        // {url: `https://api.openf1.org/v1/meetings?date_start>=${startDate}`, 
+        //     fields:[`meeting_key`, `session_key`, `circuit_short_name`, `location`, `country_name`, `meeting_name`, 
+        //     `meeting_official_name`, `date_start`] 
+        // },
+
+        {url: `https://api.openf1.org/v1/sessions?date_start%3E=2024-10-10`, 
+            fields:[`meeting_key`, `session_key`, `date_start`, `date_end`, `session_type`, 
+            `session_name`, `circuit_key`, `circuit_short_name`, `gmt_offset`]
+        },
+            
+        // {url: `https://api.openf1.org/v1/position?session_key=9896`, 
+        //     fields:[`session_key`, `meeting_key`, `driver_number`, `position`] 
+        // },
+        
+        {url: `https://api.openf1.org/v1/session_result?session_key=9896`, 
+            fields:[`position`, `driver_number`, `number_of_laps`, `points`, 
+                `dnf`, `dns`, `dsq`, `gap_to_leader`,`meeting_key`, `session_key`] 
+        }
+    ]
+
+    
+
+
 export const cardsObj = {
     dogs: [
         'dog1.jpg',
@@ -61,8 +85,6 @@ export const cardsObj = {
         'foods1.jpg',
         'foods2.avif',
         'foods3.jpg',
-        'foods3.jpg',
-        'foods4.jpg',
         'foods4.jpg',
         'foods5.jpg',
         'foods6.jpg',
@@ -83,10 +105,7 @@ export const cardsObj = {
         'foods21.avif',
         'foods22.webp',
         'foods23.webp',
-        'foods23.webp',
         'foods24.webp',
-        'foods24.webp',
-        'foods25.webp',
         'foods25.webp',
     ]
 }
