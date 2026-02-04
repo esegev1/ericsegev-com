@@ -628,16 +628,9 @@ body:has(.resume-main) {
     border-bottom: 2px solid #e0e0e0;
 }
 
-/* Sticky wrapper for profile card */
+/* Wrapper for profile card */
 .resume-sticky-wrapper {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: #f5f5f5;
-    padding: 20px 0 25px 0;
-    margin: 0 -20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    /* Not sticky anymore */
 }
 
 /* Profile card */
@@ -897,12 +890,6 @@ body:has(.resume-main) {
         flex-direction: column;
     }
 
-    /* Profile card - not sticky on mobile */
-    .resume-sticky-wrapper {
-        position: static;
-        padding: 0;
-        margin: 0;
-    }
 
     .resume-profile-card {
         flex-direction: row;
