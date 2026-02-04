@@ -897,12 +897,11 @@ body:has(.resume-main) {
         flex-direction: column;
     }
 
-    /* Profile card - horizontal compact layout */
+    /* Profile card - not sticky on mobile */
     .resume-sticky-wrapper {
-        padding: 12px 0 16px 0;
-        margin: 0 -12px;
-        padding-left: 12px;
-        padding-right: 12px;
+        position: static;
+        padding: 0;
+        margin: 0;
     }
 
     .resume-profile-card {
@@ -933,20 +932,20 @@ body:has(.resume-main) {
 
     .resume-name {
         grid-area: name;
-        font-size: 22px;
+        font-size: 26px;
         line-height: 1.2;
     }
 
     .resume-title {
         grid-area: title;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .resume-summary {
         grid-area: summary;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.5;
-        margin: 4px 0;
+        margin: 6px 0;
     }
 
     /* Contact links - icon only, next to name */
@@ -985,44 +984,44 @@ body:has(.resume-main) {
     }
 
     .resume-card {
-        padding: 16px;
+        padding: 18px;
     }
 
     .resume-card-title {
-        font-size: 16px;
-        margin-bottom: 12px;
-        padding-bottom: 6px;
+        font-size: 18px;
+        margin-bottom: 14px;
+        padding-bottom: 8px;
     }
 
-    /* Skills - compact tags */
+    /* Skills */
     .resume-skills-content {
-        gap: 10px;
+        gap: 12px;
     }
 
     .resume-skill-row {
-        gap: 4px;
-    }
-
-    .resume-skill-label {
-        font-size: 11px;
-    }
-
-    .resume-skill-tags {
         gap: 6px;
     }
 
-    .resume-skill-tag {
-        padding: 4px 10px;
-        font-size: 12px;
+    .resume-skill-label {
+        font-size: 13px;
     }
 
-    /* Education - compact horizontal layout */
+    .resume-skill-tags {
+        gap: 8px;
+    }
+
+    .resume-skill-tag {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    /* Education */
     .resume-education-content {
-        gap: 10px;
+        gap: 12px;
     }
 
     .resume-edu-item {
-        padding-bottom: 10px;
+        padding-bottom: 12px;
     }
 
     .resume-edu-row {
@@ -1032,11 +1031,11 @@ body:has(.resume-main) {
     }
 
     .resume-edu-school {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .resume-edu-year {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .resume-edu-degree-row {
@@ -1045,68 +1044,68 @@ body:has(.resume-main) {
     }
 
     .resume-edu-degree {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .resume-edu-location {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     /* Experience section */
     .resume-section-title {
-        font-size: 20px;
-        margin: 12px 0 0 0;
+        font-size: 22px;
+        margin: 16px 0 0 0;
     }
 
     .resume-experience-card {
-        padding: 16px;
+        padding: 18px;
     }
 
     .resume-exp-header {
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
     }
 
     .resume-exp-header .resume-card-title {
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: none;
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .resume-exp-location {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     /* Role - stack title and dates */
     .resume-role {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
     }
 
     .resume-role-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 2px;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     .resume-role-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .resume-role-dates {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .resume-bullets {
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.6;
-        padding-left: 16px;
+        padding-left: 18px;
     }
 
     .resume-bullets li {
-        margin-bottom: 4px;
+        margin-bottom: 6px;
     }
 }
