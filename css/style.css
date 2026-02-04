@@ -912,9 +912,9 @@ body:has(.resume-main) {
     }
 
     .resume-photo {
-        width: 80px;
-        height: 80px;
-        border-width: 3px;
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
     }
 
     .resume-profile-info {
