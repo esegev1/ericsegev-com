@@ -41,14 +41,14 @@ async function fetchData() {
     const openF1Queries = [
         {
             url: `https://api.openf1.org/v1/sessions?date_start>=${startDate}`,
-            fields: [`meeting_key`, `session_key`, `date_start`, `date_end`, `session_type`,
+            fields: [`session_key`, `meeting_key`, `date_start`, `date_end`, `session_type`,
                 `session_name`, `circuit_key`, `circuit_short_name`, `gmt_offset`]
         },
-        {
-            url: `https://api.openf1.org/v1/session_result?session_key>=${meeting_key}`,
-            fields: [`position`, `driver_number`, `number_of_laps`, `points`,
-                `dnf`, `dns`, `dsq`, `gap_to_leader`, `meeting_key`, `session_key`]
-        }
+        // {
+        //     url: `https://api.openf1.org/v1/session_result?session_key>=${meeting_key}`,
+        //     fields: [`position`, `driver_number`, `number_of_laps`, `points`,
+        //         `dnf`, `dns`, `dsq`, `gap_to_leader`, `meeting_key`, `session_key`]
+        // }
     ];
 
     console.log(`openF1Queries[0].url: ${openF1Queries[0].url}`);
@@ -59,25 +59,29 @@ async function fetchData() {
     // const dataString = JSON.stringify(data, null, 2);
     console.log(`fetch: ${JSON.stringify(data, null, 2)}`);
 
-    //format data into table
-    const dataArr = [];
-    for (const row of data) {
-        console.log(`row: ${JSON.stringify(openF1Queries[row].fields[0], null, 2)}`);
-        const rowArr = [
-            row[openF1Queries[row].fields[0]],
-            row[openF1Queries[row].fields[1]],
-            row[openF1Queries[row].fields[2]],
-            row[openF1Queries[row].fields[3]],
-            row[openF1Queries[row].fields[4]],
-            row[openF1Queries[row].fields[5]],
-            row[openF1Queries[row].fields[6]],
-            row[openF1Queries[row].fields[7]],
-            row[openF1Queries[row].fields[8]],
-        ];
+    console.log(data);
 
-        dataArr.push(rowArr);
+    console.log(`openF1Queries[0].fields: ${openF1Queries[0].fields}`)
+    const headingArr = openF1Queries[0].fields;
+
+    console.log(`headingArr: ${headingArr[0]}`);
+    const dataArr = [];
+
+    console.log(`dataArr: ${typeof dataArr}`);
+
+    for(const row of data) {
+       
+        console.log(`row: ${JSON.stringify(row, null, 2)}, row.length: ${row.length}`);
+        const tempArr = [];
+        for(let d=0;d<Object.keys(row).length;d++) {
+            console.log(`field: ${headingArr[d]}, value: ${row[headingArr[d]]}`);
+            tempArr.push(row[headingArr[d]]);
+        }
+
+        dataArr.push(tempArr);
     }
 
+     console.log(`dataArr: ${JSON.stringify(dataArr, null, 2)}`);
     //create article element
     const article = document.createElement('article');
     article.classList.toggle('data-container');
@@ -92,17 +96,7 @@ async function fetchData() {
 
     thead.appendChild(headingTr);
 
-    const headingsArr = [
-        row.openF1Queries.fields[0],
-        row.openF1Queries.fields[1],
-        row.openF1Queries.fields[2],
-        row.openF1Queries.fields[3],
-        row.openF1Queries.fields[4],
-        row.openF1Queries.fields[5],
-        row.openF1Queries.fields[6],
-        row.openF1Queries.fields[7],
-        row.openF1Queries.fields[8],
-    ]
+    const headingsArr = openF1Queries[0].fields;
 
     // const headingsArr = [
     //     // `meeting_key`, 
@@ -129,9 +123,10 @@ async function fetchData() {
     const tbody = document.createElement('tbody');
 
     //create data table
-    for (const row of dataArr) {
+    for (const arr of dataArr) {
         const tr = document.createElement('tr');
-        for (const cell of row) {
+        console.log(`row type: ${typeof arr}, arr data: ${arr}`);
+        for (const cell of arr) {
             const td = document.createElement('td');
             td.innerText = cell;
             tr.appendChild(td);

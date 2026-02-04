@@ -1,5 +1,8 @@
 import { initializeBoard } from './memorygame.js';
 import { initializeFantasy } from './f1fantasy.js';
+import { initializeRecipeBlog } from './recipeblog.js';
+import { config } from './config.js';
+import { generateResumeView } from './resume.js';
 
 const imagePath = `./images/home/`;
 
@@ -19,6 +22,7 @@ const projectHandler = (event) => {
     switch (project) {
         case 'memory-game': initializeBoard(); break;
         case 'f1-fantasy': initializeFantasy(); break;
+        case 'recipe-blog': initializeRecipeBlog(); break;
     }
 
 
@@ -235,7 +239,7 @@ function generateAboutMe() {
     //get components for about me section
     const intro = generateIntro();
     const ericDiv = generateEric();
-    // const background = generateBackground();
+    const background = generateBackground();
 
     //create about me section
     const aboutMe = document.createElement('section');
@@ -243,7 +247,7 @@ function generateAboutMe() {
 
     aboutMe.appendChild(intro);
     aboutMe.appendChild(ericDiv);
-    // aboutMe.appendChild(background);
+    aboutMe.appendChild(background);
 
     //create about me container for grid background effect
     const aboutMeContainer = document.createElement('section');
@@ -264,7 +268,8 @@ function generateProjects() {
     //array with list of projects to display
     const projectsArr = [
         { name: 'Memory Game', icon: `${imagePath}memorygame.png`, code: 'memory-game' },
-        { name: 'F1 Fantasy', icon: `${imagePath}f1fantasy.png`, code: 'f1-fantasy' }
+        { name: 'F1 Fantasy', icon: `${imagePath}f1fantasy.png`, code: 'f1-fantasy' },
+        { name: 'Recipe Blog', icon: `${imagePath}recipeblog.png`, code: 'recipe-blog' },
     ];
 
     //create projects container
@@ -349,18 +354,39 @@ function generateMain() {
 }
 
 /**************************************************************
+ *    Generate HTML structure for resume page
+ *
+ *
+ **************************************************************/
+function generateResumeMain() {
+    const resumeContainer = generateResumeView();
+
+    const main = document.createElement('section');
+    main.classList.add('main', 'resume-main');
+
+    main.appendChild(resumeContainer);
+
+    return main;
+}
+
+/**************************************************************
  *    Generate HTML structure for home page
- *     
- *    
+ *
+ *
  **************************************************************/
 export function generateHomePage() {
     const body = document.querySelector('body');
     body.replaceChildren()
 
     const header = generateHeader();
-    const main = generateMain();
 
-    body.appendChild(header);
+    // Check feature flag for view mode
+    const main = config.viewMode === 'resume' ? generateResumeMain() : generateMain();
+
+    // Only show header in home view
+    if (config.viewMode !== 'resume') {
+        body.appendChild(header);
+    }
     body.appendChild(main);
 
 

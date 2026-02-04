@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.google.com)",
+      "WebSearch",
+      "WebFetch(domain:elements.envato.com)",
+      "WebFetch(domain:doc-0c-84-docstext.googleusercontent.com)",
+      "Bash(ls:*)",
+      "Bash(python3 -m http.server 8000)"
+    ]
+  }
+}
