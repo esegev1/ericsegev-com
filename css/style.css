@@ -893,6 +893,13 @@ body:has(.resume-main) {
     .resume-profile-card {
         flex-direction: column;
         text-align: center;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .resume-photo {
+        width: 100px;
+        height: 100px;
     }
 
     .resume-contact-links {
@@ -900,7 +907,7 @@ body:has(.resume-main) {
     }
 
     .resume-side-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .resume-exp-header,
@@ -913,5 +920,22 @@ body:has(.resume-main) {
 
     .resume-name {
         font-size: 28px;
+    }
+
+    .resume-summary {
+        font-size: 14px;
+    }
+
+    .resume-title {
+        font-size: 16px;
+    }
+
+    .resume-card-title {
+        font-size: 16px;
+    }
+
+    .resume-skill-tag {
+        padding: 4px 10px;
+        font-size: 12px;
     }
 }
