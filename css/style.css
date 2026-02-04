@@ -890,52 +890,223 @@ body:has(.resume-main) {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .resume-profile-card {
+    .resume-container {
+        padding: 12px 12px 40px 12px;
+        gap: 12px;
+        display: flex;
         flex-direction: column;
-        text-align: center;
+    }
+
+    /* Profile card - horizontal compact layout */
+    .resume-sticky-wrapper {
+        padding: 12px 0 16px 0;
+        margin: 0 -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .resume-profile-card {
+        flex-direction: row;
+        align-items: center;
         gap: 16px;
         padding: 16px;
     }
 
     .resume-photo {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
+        border-width: 3px;
     }
 
-    .resume-contact-links {
-        justify-content: center;
-    }
-
-    .resume-side-section {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .resume-exp-header,
-    .resume-role-header,
-    .resume-edu-row,
-    .resume-edu-degree-row {
-        flex-direction: column;
+    .resume-profile-info {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "name links"
+            "title title"
+            "summary summary";
+        align-items: center;
         gap: 4px;
+        flex: 1;
+        min-width: 0;
     }
 
     .resume-name {
-        font-size: 28px;
-    }
-
-    .resume-summary {
-        font-size: 14px;
+        grid-area: name;
+        font-size: 22px;
+        line-height: 1.2;
     }
 
     .resume-title {
-        font-size: 16px;
+        grid-area: title;
+        font-size: 14px;
+    }
+
+    .resume-summary {
+        grid-area: summary;
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 4px 0;
+    }
+
+    /* Contact links - icon only, next to name */
+    .resume-contact-links {
+        grid-area: links;
+        gap: 6px;
+        margin-top: 0;
+    }
+
+    .resume-contact-links a {
+        padding: 6px;
+        font-size: 0;
+        gap: 0;
+        border-radius: 50%;
+    }
+
+    .resume-contact-links img {
+        width: 16px;
+        height: 16px;
+        filter: brightness(0) saturate(100%) invert(27%) sepia(18%) saturate(1095%) hue-rotate(93deg) brightness(96%) contrast(89%);
+    }
+
+    /* On mobile, flatten side-section so we can reorder education */
+    .resume-side-section {
+        display: contents;
+    }
+
+    /* Skills stays in place */
+    .resume-side-section .resume-card:first-child {
+        order: 0;
+    }
+
+    /* Education moves to the end */
+    .resume-side-section .resume-card:last-child {
+        order: 99;
+    }
+
+    .resume-card {
+        padding: 16px;
     }
 
     .resume-card-title {
         font-size: 16px;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+    }
+
+    /* Skills - compact tags */
+    .resume-skills-content {
+        gap: 10px;
+    }
+
+    .resume-skill-row {
+        gap: 4px;
+    }
+
+    .resume-skill-label {
+        font-size: 11px;
+    }
+
+    .resume-skill-tags {
+        gap: 6px;
     }
 
     .resume-skill-tag {
         padding: 4px 10px;
         font-size: 12px;
+    }
+
+    /* Education - compact horizontal layout */
+    .resume-education-content {
+        gap: 10px;
+    }
+
+    .resume-edu-item {
+        padding-bottom: 10px;
+    }
+
+    .resume-edu-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .resume-edu-school {
+        font-size: 14px;
+    }
+
+    .resume-edu-year {
+        font-size: 13px;
+    }
+
+    .resume-edu-degree-row {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .resume-edu-degree {
+        font-size: 13px;
+    }
+
+    .resume-edu-location {
+        font-size: 12px;
+    }
+
+    /* Experience section */
+    .resume-section-title {
+        font-size: 20px;
+        margin: 12px 0 0 0;
+    }
+
+    .resume-experience-card {
+        padding: 16px;
+    }
+
+    .resume-exp-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 4px;
+    }
+
+    .resume-exp-header .resume-card-title {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        font-size: 15px;
+    }
+
+    .resume-exp-location {
+        font-size: 12px;
+    }
+
+    /* Role - stack title and dates */
+    .resume-role {
+        margin-bottom: 12px;
+    }
+
+    .resume-role-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        margin-bottom: 6px;
+    }
+
+    .resume-role-title {
+        font-size: 14px;
+    }
+
+    .resume-role-dates {
+        font-size: 12px;
+    }
+
+    .resume-bullets {
+        font-size: 13px;
+        line-height: 1.6;
+        padding-left: 16px;
+    }
+
+    .resume-bullets li {
+        margin-bottom: 4px;
     }
 }
