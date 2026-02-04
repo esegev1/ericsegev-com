@@ -170,7 +170,7 @@ function generateProfileCard() {
 
     const emailLink = document.createElement('a');
     emailLink.href = `mailto:${resumeData.contact.email}`;
-    emailLink.innerHTML = `<img src="${imagePath}emailLogo.png" alt="Email"> ${resumeData.contact.email}`;
+    emailLink.innerHTML = `<img src="${imagePath}emailIcon.svg" alt="Email"> ${resumeData.contact.email}`;
 
     const githubLink = document.createElement('a');
     githubLink.href = resumeData.contact.github;
@@ -182,9 +182,16 @@ function generateProfileCard() {
     linkedinLink.target = '_blank';
     linkedinLink.innerHTML = `<img src="${imagePath}linkedInLogo.png" alt="LinkedIn"> LinkedIn`;
 
+    const downloadLink = document.createElement('a');
+    downloadLink.href = './files/Eric_Segev_Resume.pdf';
+    downloadLink.download = 'Eric_Segev_Resume.pdf';
+    downloadLink.innerHTML = `<img src="${imagePath}downloadIcon.svg" alt="Download"> Download PDF`;
+    downloadLink.classList.add('resume-download-link');
+
     contactLinks.appendChild(emailLink);
     contactLinks.appendChild(githubLink);
     contactLinks.appendChild(linkedinLink);
+    contactLinks.appendChild(downloadLink);
 
     infoContainer.appendChild(name);
     infoContainer.appendChild(title);
