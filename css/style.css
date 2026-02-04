@@ -934,6 +934,7 @@ body:has(.resume-main) {
         grid-area: name;
         font-size: 26px;
         line-height: 1.2;
+        white-space: nowrap;
     }
 
     .resume-title {
