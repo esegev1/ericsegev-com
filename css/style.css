@@ -661,7 +661,7 @@ body:has(.resume-main) {
 
 .resume-scroll-header-left {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 12px;
 }
 
@@ -671,6 +671,7 @@ body:has(.resume-main) {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #4a9c6d;
+    align-self: center;
 }
 
 .resume-scroll-header-name {
