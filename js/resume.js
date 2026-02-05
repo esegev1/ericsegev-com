@@ -377,7 +377,13 @@ function generateStickyHeader() {
     pdfButton.href = './files/Eric_Segev_Resume.pdf';
     pdfButton.target = '_blank';
     pdfButton.classList.add('resume-scroll-header-pdf');
-    pdfButton.textContent = 'Resume PDF';
+
+    const pdfIcon = document.createElement('img');
+    pdfIcon.src = `${imagePath}downloadIcon.svg`;
+    pdfIcon.alt = 'Download';
+    pdfIcon.classList.add('resume-scroll-header-pdf-icon');
+    pdfButton.appendChild(pdfIcon);
+    pdfButton.appendChild(document.createTextNode('Resume PDF'));
 
     inner.appendChild(left);
     inner.appendChild(pdfButton);

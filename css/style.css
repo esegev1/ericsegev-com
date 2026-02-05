@@ -674,7 +674,7 @@ body:has(.resume-main) {
 }
 
 .resume-scroll-header-name {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     color: #333;
 }
@@ -682,7 +682,9 @@ body:has(.resume-main) {
 .resume-scroll-header-pdf {
     display: inline-flex;
     align-items: center;
+    gap: 6px;
     padding: 6px 16px;
+    margin-right: 20px;
     background: #4a9c6d;
     color: white;
     text-decoration: none;
@@ -690,6 +692,12 @@ body:has(.resume-main) {
     font-weight: 600;
     border-radius: 20px;
     transition: background 0.2s ease;
+}
+
+.resume-scroll-header-pdf-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
 }
 
 .resume-scroll-header-pdf:hover {
