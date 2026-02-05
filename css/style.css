@@ -695,9 +695,8 @@ body:has(.resume-main) {
 }
 
 .resume-scroll-header-title {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
     font-size: 16px;
+    font-weight: 400;
     color: #666;
 }
 

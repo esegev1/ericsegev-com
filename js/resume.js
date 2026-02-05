@@ -368,7 +368,7 @@ function generateStickyHeader() {
 
     const name = document.createElement('span');
     name.classList.add('resume-scroll-header-name');
-    name.textContent = resumeData.name;
+    name.textContent = resumeData.name + ',';
 
     const titleSpan = document.createElement('span');
     titleSpan.classList.add('resume-scroll-header-title');
