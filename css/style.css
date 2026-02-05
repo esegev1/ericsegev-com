@@ -962,20 +962,20 @@ body:has(.resume-main) {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .resume-scroll-header-inner {
-        padding: 6px 12px;
+        padding: 12px 12px;
     }
 
     .resume-scroll-header-photo {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .resume-scroll-header-name {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .resume-scroll-header-title {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .resume-scroll-header-pdf {
