@@ -8,8 +8,8 @@ const imagePath = `./images/home/`;
 
 const resumeData = {
     name: 'Eric Segev',
-    title: 'Software Engineer',
-    summary: 'Software Engineer with experience building internal tools, APIs, and data systems at Google, Salesforce, and Meta, drawing on perspectives across product, operations, and engineering.',
+    title: 'Builder & Operator',
+    summary: 'Builder and operator with 15 years of experience across Google, Salesforce, and Facebook. From launching internal tools and API migrations to leading data-driven planning processes at scale. Equally comfortable writing code and aligning cross-functional stakeholders.',
     contact: {
         email: 'esegev1@gmail.com',
         github: 'https://github.com/esegev1',
@@ -370,8 +370,13 @@ function generateStickyHeader() {
     name.classList.add('resume-scroll-header-name');
     name.textContent = resumeData.name;
 
+    const titleSpan = document.createElement('span');
+    titleSpan.classList.add('resume-scroll-header-title');
+    titleSpan.textContent = resumeData.title;
+
     left.appendChild(photo);
     left.appendChild(name);
+    left.appendChild(titleSpan);
 
     const pdfButton = document.createElement('a');
     pdfButton.href = './files/Eric_Segev_Resume.pdf';

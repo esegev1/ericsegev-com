@@ -694,6 +694,13 @@ body:has(.resume-main) {
     transition: background 0.2s ease;
 }
 
+.resume-scroll-header-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #666;
+}
+
 .resume-scroll-header-pdf-icon {
     width: 16px;
     height: 16px;
@@ -965,6 +972,10 @@ body:has(.resume-main) {
 
     .resume-scroll-header-name {
         font-size: 16px;
+    }
+
+    .resume-scroll-header-title {
+        font-size: 14px;
     }
 
     .resume-scroll-header-pdf {
