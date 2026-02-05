@@ -642,6 +642,7 @@ body:has(.resume-main) {
     z-index: 1000;
     background: white;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
 }
@@ -661,8 +662,14 @@ body:has(.resume-main) {
 
 .resume-scroll-header-left {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 12px;
+}
+
+.resume-scroll-header-text {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
 }
 
 .resume-scroll-header-photo {
@@ -671,7 +678,6 @@ body:has(.resume-main) {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #4a9c6d;
-    align-self: center;
 }
 
 .resume-scroll-header-name {
@@ -973,11 +979,15 @@ body:has(.resume-main) {
     }
 
     .resume-scroll-header-name {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .resume-scroll-header-title {
-        font-size: 16px;
+        font-size: 13px;
+    }
+
+    .resume-scroll-header-text {
+        gap: 5px;
     }
 
     .resume-scroll-header-pdf {

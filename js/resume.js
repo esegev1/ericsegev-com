@@ -374,9 +374,13 @@ function generateStickyHeader() {
     titleSpan.classList.add('resume-scroll-header-title');
     titleSpan.textContent = resumeData.title;
 
+    const textWrap = document.createElement('div');
+    textWrap.classList.add('resume-scroll-header-text');
+    textWrap.appendChild(name);
+    textWrap.appendChild(titleSpan);
+
     left.appendChild(photo);
-    left.appendChild(name);
-    left.appendChild(titleSpan);
+    left.appendChild(textWrap);
 
     const pdfButton = document.createElement('a');
     pdfButton.href = './files/Eric_Segev_Resume.pdf';
