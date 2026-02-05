@@ -435,12 +435,6 @@ export function generateResumeView() {
     sideSection.appendChild(educationCard);
     container.appendChild(sideSection);
 
-    // Experience section title
-    const expTitle = document.createElement('h2');
-    expTitle.classList.add('resume-section-title');
-    expTitle.textContent = 'Professional Experience';
-    container.appendChild(expTitle);
-
     // Experience cards
     for (const exp of resumeData.experience) {
         const expCard = generateExperienceCard(exp);

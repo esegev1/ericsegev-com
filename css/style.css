@@ -678,6 +678,7 @@ body:has(.resume-main) {
     font-size: 22px;
     font-weight: 700;
     color: #333;
+    line-height: 1;
 }
 
 .resume-scroll-header-pdf {
@@ -699,6 +700,7 @@ body:has(.resume-main) {
     font-size: 16px;
     font-weight: 400;
     color: #666;
+    line-height: 1;
 }
 
 .resume-scroll-header-pdf-icon {
@@ -981,7 +983,7 @@ body:has(.resume-main) {
     .resume-scroll-header-pdf {
         padding: 4px 10px;
         font-size: 12px;
-        margin-right: 8px;
+        margin-right: 14px;
     }
 
     .resume-container {
