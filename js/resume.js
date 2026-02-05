@@ -388,7 +388,7 @@ function generateStickyHeader() {
     pdfIcon.alt = 'Download';
     pdfIcon.classList.add('resume-scroll-header-pdf-icon');
     pdfButton.appendChild(pdfIcon);
-    pdfButton.appendChild(document.createTextNode('Resume PDF'));
+    pdfButton.appendChild(document.createTextNode('Resume'));
 
     inner.appendChild(left);
     inner.appendChild(pdfButton);

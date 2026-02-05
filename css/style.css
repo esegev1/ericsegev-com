@@ -685,7 +685,7 @@ body:has(.resume-main) {
     align-items: center;
     gap: 6px;
     padding: 6px 16px;
-    margin-right: 20px;
+    margin-right: 12px;
     background: #4a9c6d;
     color: white;
     text-decoration: none;
@@ -962,7 +962,7 @@ body:has(.resume-main) {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .resume-scroll-header-inner {
-        padding: 8px 12px;
+        padding: 6px 12px;
     }
 
     .resume-scroll-header-photo {
@@ -971,16 +971,17 @@ body:has(.resume-main) {
     }
 
     .resume-scroll-header-name {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .resume-scroll-header-title {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .resume-scroll-header-pdf {
-        padding: 5px 12px;
-        font-size: 13px;
+        padding: 4px 10px;
+        font-size: 12px;
+        margin-right: 8px;
     }
 
     .resume-container {
