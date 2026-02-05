@@ -633,6 +633,69 @@ body:has(.resume-main) {
     /* Not sticky anymore */
 }
 
+/* Scroll header - compact bar that appears when profile card scrolls away */
+.resume-scroll-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.resume-scroll-header.visible {
+    transform: translateY(0);
+}
+
+.resume-scroll-header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resume-scroll-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.resume-scroll-header-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4a9c6d;
+}
+
+.resume-scroll-header-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.resume-scroll-header-pdf {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    background: #4a9c6d;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: background 0.2s ease;
+}
+
+.resume-scroll-header-pdf:hover {
+    background: #3d8a5e;
+}
+
 /* Profile card */
 .resume-profile-card {
     display: flex;
@@ -883,6 +946,24 @@ body:has(.resume-main) {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .resume-scroll-header-inner {
+        padding: 8px 12px;
+    }
+
+    .resume-scroll-header-photo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .resume-scroll-header-name {
+        font-size: 16px;
+    }
+
+    .resume-scroll-header-pdf {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+
     .resume-container {
         padding: 12px 12px 40px 12px;
         gap: 12px;

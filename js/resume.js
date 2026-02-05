@@ -349,11 +349,53 @@ function generateEducationCard() {
 }
 
 /**
+ * Creates the compact sticky header that appears on scroll
+ */
+function generateStickyHeader() {
+    const header = document.createElement('div');
+    header.classList.add('resume-scroll-header');
+
+    const inner = document.createElement('div');
+    inner.classList.add('resume-scroll-header-inner');
+
+    const left = document.createElement('div');
+    left.classList.add('resume-scroll-header-left');
+
+    const photo = document.createElement('img');
+    photo.src = `${imagePath}profile.jpg`;
+    photo.alt = 'Eric Segev';
+    photo.classList.add('resume-scroll-header-photo');
+
+    const name = document.createElement('span');
+    name.classList.add('resume-scroll-header-name');
+    name.textContent = resumeData.name;
+
+    left.appendChild(photo);
+    left.appendChild(name);
+
+    const pdfButton = document.createElement('a');
+    pdfButton.href = './files/Eric_Segev_Resume.pdf';
+    pdfButton.target = '_blank';
+    pdfButton.classList.add('resume-scroll-header-pdf');
+    pdfButton.textContent = 'Resume PDF';
+
+    inner.appendChild(left);
+    inner.appendChild(pdfButton);
+    header.appendChild(inner);
+
+    return header;
+}
+
+/**
  * Generates the full resume view
  */
 export function generateResumeView() {
     const container = document.createElement('div');
     container.classList.add('resume-container');
+
+    // Sticky scroll header
+    const stickyHeader = generateStickyHeader();
+    document.body.appendChild(stickyHeader);
 
     // Profile card wrapped in sticky container
     const profileCard = generateProfileCard();
@@ -361,6 +403,15 @@ export function generateResumeView() {
     stickyWrapper.classList.add('resume-sticky-wrapper');
     stickyWrapper.appendChild(profileCard);
     container.appendChild(stickyWrapper);
+
+    // Show/hide sticky header based on profile card visibility
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            stickyHeader.classList.toggle('visible', !entry.isIntersecting);
+        },
+        { threshold: 0 }
+    );
+    observer.observe(stickyWrapper);
 
     // Two column layout for skills and education
     const sideSection = document.createElement('div');
