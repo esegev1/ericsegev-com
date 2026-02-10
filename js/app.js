@@ -2,7 +2,7 @@ import { initializeBoard } from './memorygame.js';
 import { initializeFantasy } from './f1fantasy.js';
 import { initializeRecipeBlog } from './recipeblog.js';
 import { config } from './config.js';
-import { generateResumeView } from './resume.js';
+import { generateResumeView, hydrateResumeView } from './resume.js';
 
 const imagePath = `./images/home/`;
 
@@ -375,6 +375,12 @@ function generateResumeMain() {
  *
  **************************************************************/
 export function generateHomePage() {
+    // If resume HTML is already pre-rendered, just hydrate it
+    if (config.viewMode === 'resume' && document.querySelector('.resume-container')) {
+        hydrateResumeView();
+        return;
+    }
+
     const body = document.querySelector('body');
     body.replaceChildren()
 

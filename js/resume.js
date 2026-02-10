@@ -402,6 +402,24 @@ function generateStickyHeader() {
 }
 
 /**
+ * Hydrates pre-rendered resume HTML by attaching the IntersectionObserver
+ */
+export function hydrateResumeView() {
+    const stickyHeader = document.querySelector('.resume-scroll-header');
+    const stickyWrapper = document.querySelector('.resume-sticky-wrapper');
+
+    if (stickyHeader && stickyWrapper) {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                stickyHeader.classList.toggle('visible', !entry.isIntersecting);
+            },
+            { threshold: 0 }
+        );
+        observer.observe(stickyWrapper);
+    }
+}
+
+/**
  * Generates the full resume view
  */
 export function generateResumeView() {
