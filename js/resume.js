@@ -8,8 +8,8 @@ const imagePath = `./images/home/`;
 
 const resumeData = {
     name: 'Eric Segev',
-    title: 'Builder & Operator',
-    summary: 'Builder and operator with 15 years of experience across Google, Salesforce, and Facebook. From launching internal tools and API migrations to leading data-driven planning processes at scale. Equally comfortable writing code and aligning cross-functional stakeholders.',
+    title: 'Software Engineer',
+    summary: 'Software Engineer experienced in building internal tools, APIs, and data systems across Google, Salesforce, and Meta, leveraging expertise in product, operations, and engineering.',
     contact: {
         email: 'esegev1@gmail.com',
         github: 'https://github.com/esegev1',
@@ -30,17 +30,17 @@ const resumeData = {
                     title: 'Product Lead - YouTube',
                     dates: 'Sep 2021 - Oct 2025',
                     bullets: [
-                        'Oversaw an API migration to leverage a new internal contracting tool (over 1,000 users migrated), working with cross functional product and business stakeholder teams to ensure a flawless migration',
-                        'Introduced a new tool to capture crucial business terms from over 4,000 contracts into a searchable database used by the operations team to track YouTube\'s rights and obligations to content partners',
-                        'Launched a new contracting workflow to Partner Managers, representing 6,000 partners, to support new monetization features on the YouTube platform'
+                        'Oversaw an API migration to leverage a new internal contracting tool (over 1,000 users migrated), working with cross-functional product and business stakeholder teams to ensure a flawless migration',
+                        'Built a tool to extract terms from 4,000+ contracts into a structured database used by operations teams',
+                        'Launched contracting support functionality for YouTube Shorts monetization, impacting 6,000 partners'
                     ]
                 },
                 {
                     title: 'Strategy Lead - Google Cloud',
                     dates: 'Nov 2018 - Aug 2021',
                     bullets: [
-                        'Built & launched a Forecasting tool to 250+ Sales managers, the tool was used for our bi-weekly forecast process and won a Sales Ops quarterly award for innovation',
-                        'Supported the company\'s annual planning process with extensive data modeling and executive alignment sessions'
+                        'Built & launched a forecasting tool to 250+ sales managers; the tool was used for our bi-weekly forecast process and won a Sales Ops quarterly award for innovation',
+                        'Supported annual territory planning for over 1,500 Account Executives with extensive data modeling and executive alignment sessions'
                     ]
                 }
             ]
@@ -53,23 +53,22 @@ const resumeData = {
                     title: 'Sr. Manager, Quota & Capacity Planning',
                     dates: 'Jun 2017 - Oct 2018',
                     bullets: [
-                        'Led the global Quota function at Salesforce; Oversaw a team of 12 Analyst/Mgrs in charge of supporting Sales Leaders across all market segments with a sales force of over 10,000 reps',
-                        'Obtained $650,000 in internal funding from department EVP and CIO to oversee the building of a home brewed quota setting tool for our annual planning cycle',
-                        'Improved the team\'s completion rate on monthly plan maintenance to 95% (+20% YoY)'
+                        'Led the global quota function at Salesforce; oversaw a team of 12 Analysts/Managers supporting sales leaders across all market segments with a sales force of over 10,000 Account Executives',
+                        'Obtained $650,000 in internal funding from department EVP and CIO to build a tool to set sales quotas'
                     ]
                 },
                 {
                     title: 'Manager, QCP',
                     dates: 'Aug 2016 - May 2017',
                     bullets: [
-                        'Built and led the team\'s Business Tools group which implemented the Anaplan Platform as part of a company wide project to improve Quota and Crediting functions'
+                        'Led business side of 50-person cross-functional implementation of a quota planning tool for $8B sales org'
                     ]
                 },
                 {
                     title: 'Sr. Analyst, QCP',
                     dates: 'Jun 2015 - Jul 2016',
                     bullets: [
-                        'Owned the team\'s global capacity planning model used to define quota targets to the sales team'
+                        'Built global capacity model while providing regional quota maintenance support during 3x org growth'
                     ]
                 }
             ]
@@ -82,7 +81,7 @@ const resumeData = {
                     title: 'Sales Operations Analyst',
                     dates: 'Jun 2014 - May 2015',
                     bullets: [
-                        'Supported sales teams across multiple verticals (responsible for $500m annual revenue) with weekly forecasting reports and ad hoc market analysis'
+                        'Supported sales teams ($500m annual revenue) with forecasting reports and ad hoc market analysis'
                     ]
                 }
             ]
@@ -102,7 +101,7 @@ const resumeData = {
         }
     ],
     education: [
-        { school: 'General Assembly', degree: 'Eng. Bootcamp', year: '2025', location: 'Remote' },
+        { school: 'General Assembly', degree: 'SWE', year: '2025', location: 'New York, NY' },
         { school: 'New York Law School', degree: 'JD', year: '2010', location: 'New York, NY' },
         { school: 'SUNY - Binghamton', degree: 'B.S. Finance', year: '2007', location: 'Binghamton, NY' }
     ]
