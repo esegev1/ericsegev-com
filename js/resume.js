@@ -8,8 +8,8 @@ const imagePath = `./images/home/`;
 
 const resumeData = {
     name: 'Eric Segev',
-    title: 'Software Engineer',
-    summary: 'Software Engineer experienced in building internal tools, APIs, and data systems across Google, Salesforce, and Meta, leveraging expertise in product, operations, and engineering.',
+    title: 'Builder',
+    summary: 'Data-driven product leader who turns messy datasets into clear insights and big ideas into working software. Happiest when building, whether it\'s the software or the plan to ship it.',
     contact: {
         email: 'esegev1@gmail.com',
         github: 'https://github.com/esegev1',
